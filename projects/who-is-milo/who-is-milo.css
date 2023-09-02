@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "retro-title";
+    src: url("../../fonts/retro-title.ttf")
+    format("truetype")
+}
+
+@font-face {
+    font-family: "retro-paragraph";
+    src: url("../../fonts/retro-paragraph.ttf");
+}
+
+body {
+    background-color: black;
+}
+
+#screen {
+    background-image: url("assets/stars.png");
+    background-repeat: repeat;
+    z-index: -4;
+    /*background-size: calc(var(--middle-column-width-goal) + 22px) auto;*/
+}
+
+.forrest-image {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+}
+
+h1 {
+    font-family: "retro-title", monospace;
+    color: white;
+    font-size: 4em;
+}
+
+p {
+    font-family: "retro-paragraph", monospace;
+    color: white;
+    font-size: 1.5em;
+}

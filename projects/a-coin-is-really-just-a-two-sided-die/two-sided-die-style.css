@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "retro-title";
+    src: url("../../fonts/retro-title.ttf")
+    format("truetype")
+}
+
+@font-face {
+    font-family: "retro-paragraph";
+    src: url("../../fonts/retro-paragraph.ttf");
+}
+
+body {
+    background-color: black;
+}
+
+#screen {
+    background-image: url("assets/rainbow_trans.gif");
+    background-repeat: repeat-y;
+    background-size: calc(var(--middle-column-width-goal) + 22px) auto;
+    background-position: center top;
+}
+
+h1 {
+    font-family: "retro-title", monospace;
+    color: white;
+    font-size: 3em;
+}
+
+p {
+    font-family: "retro-paragraph", monospace;
+    color: white;
+    font-size: 1.5em;
+}
