@@ -48,6 +48,21 @@ body {
     min-height: 100vh;
 }
 
+::-webkit-scrollbar {
+    width: 12px; /* Adjust the width as needed */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Change the color to your preference */
+    border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+ /*Hide the scrollbar track (the area behind the thumb)*/
+::-webkit-scrollbar-track {
+    background-image: url("assets/noisebg.png");
+}
+
 #center-column {
     --column-count: 3;
     display: grid;
@@ -68,16 +83,40 @@ header {
     grid-column-start: 1;
     grid-column-end: -1;
     padding-inline: var(--outer-card-padding);
+
+    margin-bottom: -25px;
 }
 
 header h1 {
     font-size: 53px;
     width: 1px;
+    margin-bottom: 8px;
 }
 
 header .external-links {
     display: flex;
     gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    /*margin: 20px 0;*/
+}
+
+.external-links .icon {
+    font-size: 30px;
+}
+
+.divider {
+
+    --stick-out: 20px;
+
+    width: calc(100% + 2 * var(--stick-out));
+
+    margin-left: calc(-1 * var(--stick-out));
+
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.07);
+    /*margin-top: 20px;*/
+    /*margin-bottom: 20px;*/
 }
 
 #projects {
