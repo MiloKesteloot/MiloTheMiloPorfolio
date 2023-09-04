@@ -93,12 +93,20 @@ header h1 {
     margin-bottom: 8px;
 }
 
+#spacer-website-title {
+    color: transparent;
+}
+
+#website-title {
+    position: absolute;
+}
+
 header .external-links {
     display: flex;
     gap: 8px;
     margin-top: 20px;
     margin-bottom: 30px;
-    /*margin: 20px 0;*/
+    height: 30px;    /*margin: 20px 0;*/
 }
 
 .external-links .icon {

@@ -1,3 +1,53 @@
+const websiteTitle = document.getElementById("website-title");
+
+let websiteTitleTimer = 0;
+let websiteTitleText = websiteTitle.innerText;
+
+let websiteTitleTextIndex = 0;
+
+websiteTitle.innerText = "_";
+
+let setHeart = false;
+
+function bogus_repeat() {
+
+    const animIcon = "_"; // █
+
+    websiteTitleTimer += 1;
+    if (websiteTitleTextIndex < websiteTitleText.length) {
+        if (Math.random() * 3 < 1) {
+            websiteTitleTextIndex += 1;
+            websiteTitleTextIndex = Math.min(websiteTitleTextIndex, websiteTitleText.length);
+            websiteTitle.innerHTML = websiteTitleText.substring(0, websiteTitleTextIndex);
+        }
+    }
+    if (Math.floor(websiteTitleTimer/42) % 2 === 1) {
+        if (websiteTitle.innerHTML.endsWith(animIcon)) {
+            websiteTitle.innerHTML = websiteTitle.innerHTML.substring(0, websiteTitle.innerHTML.length-1);
+        }
+    } else {
+        if (!websiteTitle.innerText.endsWith(animIcon)) {
+            websiteTitle.innerHTML += animIcon;
+        }
+    }
+
+    if (websiteTitleText.length === websiteTitleTextIndex) {
+        if (!setHeart) {
+            setHeart = true;
+            setTimeout(addHeart, 4000);
+        }
+    }
+
+    setTimeout(bogus_repeat, 20 + Math.floor(Math.random() * 10));
+}
+
+setTimeout(bogus_repeat, 500);
+
+function addHeart() {
+    websiteTitleText = websiteTitleText + "\xa0<3"
+}
+
+
 const cards = document.getElementsByClassName("project_image_container");
 
 const THRESHOLD = 5;
@@ -7,7 +57,8 @@ function handleHover(e, card) {
     const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
 
     const horizontal = (clientX - offsetLeft) / clientWidth;
-    const vertical = (clientY - offsetTop) / clientHeight;
+    const vertical = (clientY - offsetTop + document.documentElement.scrollTop) / clientHeight;
+    // document.body.scrollTop
 
     let rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
     let rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
@@ -50,6 +101,4 @@ for (let i = 0; i < projects.length; i++) {
             }
         }
     }
-
-
 }
