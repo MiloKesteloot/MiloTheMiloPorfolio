@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="test-project.css">
+</head>
+<body>
+    <div id="screen">
+        <div class="column left-column left-column-spacer"></div>
+        <div class="column left-column left-column-content">
+            <div class="frame-outer">
+                <iframe src="../a-coin-is-really-just-a-two-sided-die/game/index.html" class="pico8-frame"></iframe>
+            </div>
+        </div>
+        <div class="column right-column">
+            <div class="title-text">
+                <h1 class="maintitle-text">Level Generation</h1>
+                <h2 class="subtitle-text">Marching Cubes Level Generation</h2>
+            </div>
+            <div class="main-text">
+                <p>The <strong>Marching Cubes</strong> algorithm is a system for generating objects while following a set of rules.</p>
+                <p>This project uses a 2D version of the Matching Cubes algorithm <i>(Matching Squares?)</i> to generate terrain for a general video game.</p>
+                <p>The example above has only a few simple rules; there are 5 materials: <strong>Water</strong>, <strong>sand</strong>, <strong>grass</strong>, <strong>shrubs</strong>, and <strong>forrest</strong>.</p>
+                <img style="transform: scaleX(-1);" src="assets/tiles.png" alt="Tile examples">
+                <p>Each material can only be next to it's neighboring tiles.</p>
+                <ul>
+                    <li><strong>Water</strong> can only be next to <strong>sand</strong>.</li>
+                    <li><strong>Sand</strong> can only be next to <strong>water</strong> and <strong>grass</strong>.</li>
+                    <li><strong>Grass</strong> can only be next to <strong>sand</strong> and <strong>shrubs</strong>.</li>
+                    <li><strong>Shrubs</strong> can only be next to <strong>grass</strong> and <strong>forest</strong>.</li>
+                    <li><strong>Forest</strong> can only be next to <strong>shrubs</strong>.</li>
+                </ul>
+                <p>If you look at what the above program generates, you'll notice that all of these rules stay the same.</p>
+                <br>
+                <p>You can add more rules to this system to make it better. This could include directional connections, such as "Water can never be below water" or more general additions like "Water must come in groups of at least 3" so that you don't get any one-off tiles.</p>
+                <br>
+                <a href="https://en.wikipedia.org/wiki/Marching_cubes" target="_blank">Wikipedia</a>.
+                <p>The <strong>Marching Cubes</strong> algorithm is a system for generating objects while following a set of rules.</p>
+                <p>This project uses a 2D version of the Matching Cubes algorithm <i>(Matching Squares?)</i> to generate terrain for a general video game.</p>
+                <p>The example above has only a few simple rules; there are 5 materials: <strong>Water</strong>, <strong>sand</strong>, <strong>grass</strong>, <strong>shrubs</strong>, and <strong>forrest</strong>.</p>
+                <img style="transform: scaleX(-1);" src="assets/tiles.png" alt="Tile examples">
+                <p>Each material can only be next to it's neighboring tiles.</p>
+                <ul>
+                    <li><strong>Water</strong> can only be next to <strong>sand</strong>.</li>
+                    <li><strong>Sand</strong> can only be next to <strong>water</strong> and <strong>grass</strong>.</li>
+                    <li><strong>Grass</strong> can only be next to <strong>sand</strong> and <strong>shrubs</strong>.</li>
+                    <li><strong>Shrubs</strong> can only be next to <strong>grass</strong> and <strong>forest</strong>.</li>
+                    <li><strong>Forest</strong> can only be next to <strong>shrubs</strong>.</li>
+                </ul>
+                <p>If you look at what the above program generates, you'll notice that all of these rules stay the same.</p>
+                <br>
+                <p>You can add more rules to this system to make it better. This could include directional connections, such as "Water can never be below water" or more general additions like "Water must come in groups of at least 3" so that you don't get any one-off tiles.</p>
+                <br>
+                <a href="https://en.wikipedia.org/wiki/Marching_cubes" target="_blank">Wikipedia</a>.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
