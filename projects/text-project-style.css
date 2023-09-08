@@ -1,0 +1,43 @@
+:root {
+    --text-column-width: 600px;
+}
+
+.text-column {
+    right: 0;
+    width: var(--text-column-width);
+    overflow: hidden;
+    padding: 50px;
+}
+
+.text-column .title-text {
+    text-align: center;
+}
+
+.text-column .maintitle-text {
+    font-size: 3.5em;
+    margin: 0;
+}
+
+.text-column .subtitle-text {
+    font-size: 1.3em;
+    margin: 10px 0 30px;
+}
+
+.text-column p, .text-column li, .text-column h1, .text-column h2 {
+    color: white;
+}
+
+.main-text > * {
+    margin-bottom: 10px;
+}
+
+h1, h2 {
+    font-family: sans-serif;
+}
+
+p, li {
+    font-family: Helvetica, monospace;
+
+    font-size: 1.3em;
+    line-height: 30px;
+}

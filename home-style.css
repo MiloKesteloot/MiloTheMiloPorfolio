@@ -1,12 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
+@font-face {
+    font-family: ubuntuMonoRegular;
+    src: url(assets/fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf);
 }
 
 :root {
@@ -39,6 +33,12 @@ a, a:hover, a:focus, a:active {
     --tag-gray-text-color: var(--dark-tag-gray-text-color);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--background-color);
     background-image: var(--background-image);
@@ -46,6 +46,11 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
 }
 
 ::-webkit-scrollbar {
@@ -78,7 +83,7 @@ body {
 
 header {
     color: white;
-    font-family: monospace;
+    font-family: ubuntuMonoRegular, monospace;
     margin-top: 40px;
     grid-column-start: 1;
     grid-column-end: -1;
@@ -88,7 +93,7 @@ header {
 }
 
 header h1 {
-    font-size: 53px;
+    font-size: 60px;
     width: 1px;
     margin-bottom: 8px;
 }

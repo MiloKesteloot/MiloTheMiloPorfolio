@@ -1,0 +1,10 @@
+
+
+body {
+    background-image: url(assets/noisebg.png);
+    background-repeat: repeat;
+}
+
+h1 {
+    font-family: ubuntuMonoRegular monospace;
+}
