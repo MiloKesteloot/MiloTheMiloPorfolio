@@ -3,6 +3,11 @@
     src: url(assets/fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf);
 }
 
+@font-face {
+    font-family: ubuntuMonoItalic;
+    src: url(assets/fonts/Ubuntu_Mono/UbuntuMono-Italic.ttf);
+}
+
 :root {
     --project-collumns: 3;
     --projects-side-spacing: 40px;
@@ -98,6 +103,19 @@ header h1 {
     margin-bottom: 8px;
 }
 
+header h1 a.comment-style {
+    font-size: 58px;
+    font-family: ubuntuMonoItalic, monospace;
+    color: rgba(255, 255, 255, 0.18);
+    /*color: #2f7abd;*/
+    /*color: rgba(7, 255, 0, 0.63);*/
+}
+
+header h1 a.comment-style-link {
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+}
+
 #spacer-website-title {
     /*color: transparent;*/
     color: rgba(255, 255, 255, 0.08);
@@ -127,6 +145,7 @@ header .external-links {
 
     width: calc(100% + 2 * var(--stick-out));
 
+    margin-top: 25px;
     margin-left: calc(-1 * var(--stick-out));
 
     height: 1px;
