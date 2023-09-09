@@ -39,19 +39,19 @@
 // function addHeart() {
 //     websiteTitleText = websiteTitleText + "\xa0<3"
 // }
-
-function animBlinker() {
-    const animIcon = "_"; // █
-    if (Math.floor(websiteTitleTimer/42) % 2 === 1) {
-        if (websiteTitle.innerHTML.endsWith(animIcon)) {
-            websiteTitle.innerHTML = websiteTitle.innerHTML.substring(0, websiteTitle.innerHTML.length-1);
-        }
-    } else {
-        if (!websiteTitle.innerText.endsWith(animIcon)) {
-            websiteTitle.innerHTML += animIcon;
-        }
-    }
-}
+//
+// function animBlinker() {
+//     const animIcon = "_"; // █
+//     if (Math.floor(websiteTitleTimer/42) % 2 === 1) {
+//         if (websiteTitle.innerHTML.endsWith(animIcon)) {
+//             websiteTitle.innerHTML = websiteTitle.innerHTML.substring(0, websiteTitle.innerHTML.length-1);
+//         }
+//     } else {
+//         if (!websiteTitle.innerText.endsWith(animIcon)) {
+//             websiteTitle.innerHTML += animIcon;
+//         }
+//     }
+// }
 
 const cards = document.getElementsByClassName("project_image_container");
 
@@ -88,7 +88,9 @@ for (let i = 0; i < cards.length; i++) {
 
 const projects = document.getElementsByClassName("project");
 
-const tagTemplate = `<div class="tag gray"><h5>REPLACE</h5></div>`;
+const tagTemplate = `<div class="tag text-tag gray"><h5>REPLACE</h5></div>`;
+
+const pico8TagTemplate = `<div class="tag image-tag"><img src="assets/pico8logo.png" alt="PICO-8"></div>`
 
 for (let i = 0; i < projects.length; i++) {
     const project = projects[i];
@@ -100,7 +102,11 @@ for (let i = 0; i < projects.length; i++) {
             const tagsElement = projectTextElement.querySelector(".tags");
             if (tagsElement !== null) {
                 for (let j = 0; j < tagsList.length; j++) {
-                    tagsElement.innerHTML += tagTemplate.replace("REPLACE", tagsList[j]);
+                    if (tagsList[j] === "pico8") {
+                        tagsElement.innerHTML += pico8TagTemplate;
+                    } else {
+                        tagsElement.innerHTML += tagTemplate.replace("REPLACE", tagsList[j]);
+                    }
                 }
             }
         }

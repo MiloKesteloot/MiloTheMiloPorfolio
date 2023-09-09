@@ -118,7 +118,7 @@ header h1 a.comment-style-link {
 
 #spacer-website-title {
     /*color: transparent;*/
-    color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.16);
     margin-left: -42px;
     user-select: none;
 }
@@ -253,9 +253,32 @@ header .external-links {
 }
 
 .tag {
+    margin-right: 4px;
+}
+
+.text-tag {
     border-radius: 5px;
     padding: 2px 5px;
-    margin-right: 4px;
+}
+
+.image-tag {
+    height: auto;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.image-tag > img {
+    height: 15px;
+    width: 15px;
+
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;          /* Firefox */
+    image-rendering: -o-crisp-edges;            /* Opera */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE (non-standard property) */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming)*/
 }
 
 .tag > h5 {
