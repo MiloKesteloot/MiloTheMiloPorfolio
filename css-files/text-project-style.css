@@ -1,3 +1,13 @@
+@font-face {
+    font-family: ubuntuMonoRegular;
+    src: url(/assets/fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf);
+}
+
+@font-face {
+    font-family: ubuntuMonoBold;
+    src: url(/assets/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf);
+}
+
 :root {
     --text-column-width: 600px;
 }
@@ -7,6 +17,35 @@
     width: var(--text-column-width);
     overflow: hidden;
     padding: 50px;
+}
+
+.text-column a, .text-column .rainbow {
+    /*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
+    background: linear-gradient(
+            to right,
+            rgba(255,0,0,.8),
+            rgba(255, 136, 0, 0.8),
+            rgba(208, 183, 32, 0.8),
+            rgba(55, 255, 0, 0.8),
+            rgba(0, 119, 255, 0.8),
+            rgba(176, 71, 243, 0.8),
+            rgba(255,0,0,.8));
+    background-size: 200px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration-thickness: 2px;
+    text-decoration-color: white;
+
+    animation: gradient 5s linear infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -200px;
+    }
 }
 
 .text-column .title-text {
@@ -23,7 +62,12 @@
     margin: 10px 0 30px;
 }
 
-.text-column p, .text-column li, .text-column h1, .text-column h2 {
+.text-column h3 {
+    font-size: 1.5em;
+    margin: 30px 0 10px -20px;
+}
+
+.text-column {
     color: white;
 }
 
@@ -31,13 +75,47 @@
     margin-bottom: 10px;
 }
 
-h1, h2 {
-    font-family: sans-serif;
+.text-column .no-bottom-space {
+    margin-bottom: 0;
 }
 
-p, li {
-    font-family: Helvetica, monospace;
+.text-column li {
+    margin-bottom: -10px;
+}
 
-    font-size: 1.3em;
+.text-column h1, .text-column h2, .text-column h3 {
+    font-family: ubuntuMonoRegular, monospace;
+}
+
+.text-column p, .text-column li {
+    font-family: Helvetica, serif;
+
+    font-size: 1.2rem;
     line-height: 30px;
+}
+
+.image, .video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.image img {
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+.image p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #cecece;
+}
+
+.video iframe {
+    border-radius: 10px;
+}
+
+code {
+    background-color: gray;
 }
