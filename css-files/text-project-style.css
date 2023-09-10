@@ -19,7 +19,7 @@
     padding: 50px;
 }
 
-.text-column a, .text-column .rainbow {
+.text-column a:not(.icon-container), .text-column .rainbow {
     /*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
     background: linear-gradient(
             to right,
@@ -50,6 +50,8 @@
 
 .text-column .title-text {
     text-align: center;
+
+    margin: 40px 0 70px;
 }
 
 .text-column .maintitle-text {
@@ -59,7 +61,7 @@
 
 .text-column .subtitle-text {
     font-size: 1.3em;
-    margin: 10px 0 30px;
+    margin-bottom: 10px;
 }
 
 .text-column h3 {
@@ -71,7 +73,7 @@
     color: white;
 }
 
-.main-text > * {
+.text-column .main-text > * {
     margin-bottom: 10px;
 }
 
@@ -79,7 +81,7 @@
     margin-bottom: 0;
 }
 
-.text-column li {
+.text-column li:not(:last-child) {
     margin-bottom: -10px;
 }
 
@@ -93,6 +95,11 @@
     font-size: 1.2rem;
     line-height: 30px;
 }
+
+.text-column ul {
+    margin-left: 20px;
+}
+
 
 .image, .video {
     display: flex;

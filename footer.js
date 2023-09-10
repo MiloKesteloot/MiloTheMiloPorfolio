@@ -1,6 +1,5 @@
 const footerHTML =
 `<link rel="stylesheet" type="text/css" href="/spare-html/external-links.css">
-<script src="https://kit.fontawesome.com/829bd5b350.js" crossorigin="anonymous"></script>
 <div class="footer-content">
     <div class="external-links">
         <a href="index.html" class="icon-container"><i class="icon flipX fa-solid fa-arrow-right-from-bracket"></i></a>
@@ -11,10 +10,18 @@ const footerHTML =
     </div>
 </div>`
 
-const footer = document.querySelector("footer");
+const footers = document.querySelectorAll("script[src='footer.js']");
 
-if (footer === null) {
-    console.log("Footer not found.");
-} else {
-    document.querySelector("footer").innerHTML = footerHTML;
+let fontAwesomeScript = document.createElement("script");
+    fontAwesomeScript.src = "https://kit.fontawesome.com/829bd5b350.js";
+    fontAwesomeScript.crossOrigin = "anonymous";
+    document.head.appendChild(fontAwesomeScript);
+
+for (let i = 0; i < footers.length; i++) {
+
+    const footer = document.createElement("footer");
+
+    footer.innerHTML = footerHTML;
+
+    footers[i].after(footer);
 }
