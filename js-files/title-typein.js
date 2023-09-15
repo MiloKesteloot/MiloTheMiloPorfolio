@@ -24,7 +24,6 @@ function rec() {
         finalPrint += fullString.substring(0, index + add);
         sub(index + add);
     } else if (addChar === "&") {
-        console.log("yuh");
         let index = fullString.indexOf(";");
         finalPrint += fullString.substring(0, index + 1);
         sub(index + 1);
@@ -52,11 +51,64 @@ function printnl(string) {
         add = "</a>";
     }
 
-    console.log(string + add);
-
     websiteTitle.innerHTML = string + add;
 
     // div.elt.innerText = div.elt.innerText + string + add + `\n`;
 }
 
 rec();
+
+// const websiteTitle = document.getElementById("website-title");
+//
+// let websiteTitleTimer = 0;
+// let websiteTitleText = websiteTitle.innerHTML;
+//
+// let websiteTitleTextIndex = 0;
+//
+// websiteTitle.innerText = "_";
+//
+// let setHeart = false;
+//
+// function bogus_repeat() {
+//
+//     websiteTitleTimer += 1;
+//     if (websiteTitleTextIndex < websiteTitleText.length) {
+//         if (Math.random() * 3 < 1) {
+//             websiteTitleTextIndex += 1;
+//             websiteTitleTextIndex = Math.min(websiteTitleTextIndex, websiteTitleText.length);
+//             websiteTitle.innerHTML = websiteTitleText.substring(0, websiteTitleTextIndex);
+//         }
+//     }
+//
+//     animBlinker();
+//
+//
+//
+//     setTimeout(bogus_repeat, 20 + Math.floor(Math.random() * 10));
+// }
+//
+// setTimeout(bogus_repeat, 500);
+//
+// // if (websiteTitleText.length === websiteTitleTextIndex) {
+// //     if (!setHeart) {
+// //         setHeart = true;
+// //         setTimeout(addHeart, 4000);
+// //     }
+// // }
+//
+// function addHeart() {
+//     websiteTitleText = websiteTitleText + "\xa0<3"
+// }
+//
+// function animBlinker() {
+//     const animIcon = "_"; // █
+//     if (Math.floor(websiteTitleTimer/42) % 2 === 1) {
+//         if (websiteTitle.innerHTML.endsWith(animIcon)) {
+//             websiteTitle.innerHTML = websiteTitle.innerHTML.substring(0, websiteTitle.innerHTML.length-1);
+//         }
+//     } else {
+//         if (!websiteTitle.innerText.endsWith(animIcon)) {
+//             websiteTitle.innerHTML += animIcon;
+//         }
+//     }
+// }
