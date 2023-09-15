@@ -2,7 +2,7 @@ const footerHTML =
 `<link rel="stylesheet" type="text/css" href="/spare-html/external-links.css">
 <div class="footer-content">
     <div class="external-links">
-        <a href="index.html" class="icon-container"><i class="icon flipX fa-solid fa-arrow-right-from-bracket"></i></a>
+        <a href="../index.html" class="icon-container"><i class="icon flipX fa-solid fa-arrow-right-from-bracket"></i></a>
         <a href="https://www.instagram.com/milo.jar/" target="_blank" class="icon-container"><i class="icon fa-brands fa-square-instagram"></i></a>
         <a href="https://github.com/cardy64" target="_blank" class="icon-container"><i class="icon fa-brands fa-square-github"></i></a>
         <a href="https://www.linkedin.com/in/milo-kesteloot-640a4b246/" target="_blank" class="icon-container"><i class="icon fa-brands fa-linkedin"></i></a>

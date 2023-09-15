@@ -1,11 +1,11 @@
 @font-face {
     font-family: ubuntuMonoRegular;
-    src: url(assets/fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf);
+    src: url(../assets/fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf);
 }
 
 @font-face {
     font-family: ubuntuMonoItalic;
-    src: url(assets/fonts/Ubuntu_Mono/UbuntuMono-Italic.ttf);
+    src: url(../assets/fonts/Ubuntu_Mono/UbuntuMono-Italic.ttf);
 }
 
 :root {
@@ -24,7 +24,7 @@
     --light-tag-gray-text-color: #222;
 
     --dark-background-color: #fff;
-    --dark-background-image: url("assets/noisebg.png");
+    --dark-background-image: url("../assets/noisebg.png");
     --dark-title-color: #eee;
     --dark-subtitle-color: #bbb;
     --dark-tag-gray-background-color: #d8d8d8;
@@ -70,7 +70,7 @@ a, a:hover, a:focus, a:active {
 
  /*Hide the scrollbar track (the area behind the thumb)*/
 ::-webkit-scrollbar-track {
-    background-image: url("assets/noisebg.png");
+    background-image: url("../assets/noisebg.png");
 }
 
 #center-column {
