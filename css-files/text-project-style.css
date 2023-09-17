@@ -111,12 +111,33 @@
 .image img {
     -webkit-user-drag: none;
     pointer-events: none;
+    display: block;
 }
 
 .image p {
     margin-top: 5px;
     font-size: 1em;
     color: #cecece;
+}
+
+.images-holder {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+
+    /*display: grid;*/
+    /*grid-template-columns: repeat(var(--column-count), calc(var(--project-width) + var(--outer-card-padding) * 2));*/
+    /*gap: var(--projects-bottom-spacing) var(--projects-side-spacing);*/
+}
+
+.images-holder img {
+    background-color: transparent;
+}
+
+.images-holder img:not(:last-child) {
+    margin-right: 20px;
 }
 
 .video iframe {
