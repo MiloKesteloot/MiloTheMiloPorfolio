@@ -8,6 +8,8 @@
     src: url(/assets/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf);
 }
 
+
+
 :root {
     --text-column-width: 600px;
 }
@@ -136,8 +138,8 @@
     background-color: transparent;
 }
 
-.images-holder img:not(:last-child) {
-    margin-right: 20px;
+.images-holder img:not(:first-child) {
+    margin-left: 20px;
 }
 
 .video iframe {

@@ -1,5 +1,3 @@
-console.log("footer.js");
-
 const footerHTML =
     `<link rel="stylesheet" type="text/css" href="/spare-html/external-links.css">
 <div class="footer-content">
