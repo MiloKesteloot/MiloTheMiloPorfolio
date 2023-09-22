@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css-files/all-project-style.css">
+    <link rel="stylesheet" type="text/css" href="../css-files/pico8-project-style.css">
+    <link rel="stylesheet" type="text/css" href="../css-files/text-project-style.css">
+</head>
+<body>
+<div id="screen">
+<!--    <div class="quotes">-->
+<!--        <div class="quote">-->
+<!--            <p>In theory, practice and theory are the same.<br>In practice, they aren't.</p>-->
+<!--            <p>-Yogi Berra</p>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="columns-container">
+        <div class="column text-column" style="width: 1000px;">
+            <div class="title-text">
+                <h1 class="maintitle-text">Kerbal Controller</h1>
+                <h2 class="subtitle-text">Pew pew!</h2>
+            </div>
+            <div class="main-text">
+                <h3>What Even Is This?</h3>
+                <p><a href="https://store.steampowered.com/app/220200/Kerbal_Space_Program/">Kerbal Space Program</a> is a spaceship flying game that I absolutely love.</p>
+                <p>The only part about Kerbal Space Program (KSP) that I have to use my keyboard to play. It really takes the immersion out when I have to look for random keys to do actions in game.</p>
+                <p>To fix this super pressing issue, I spent WAY too long creating this panel to play KSP with!</p>
+                <div class="image">
+                    <img style="width: 800px;" src="/project-assets/kerbal-controller/from-the-side.jpg" alt="My Kerbal Space Program controller.">
+                    <p>My KSP controller</p>
+                </div>
+                <h3>Overview</h3>
+                <p><strong>Joysticks</strong><br>
+                    The joysticks control the direction of the spaceship/aircraft! They have 3 degrees of rotation: forward-back, left-right, and rolling.</p>
+                <p><strong>Rainbow Buttons</strong><br>
+                    These are the action buttons! They each have their own affect in game; blue toggles the landing gear, white toggles the lights, red is abort flight</p>
+                <h3>How Does It Work?</h3>
+                <p>My controller uses an <a href="https://store-usa.arduino.cc/products/arduino-mega-2560-rev3">Arduino Mega</a> to connect with my computer thought USB.</p>
+                <p>Our first attempt at this was essentially a USB keyboard. My computer and KSP would think that I was simply pressing keys on a keyboard (like "Space" or "Shift" or "Left Click"). However, we very quickly found a better solution: <a href="https://krpc.github.io/krpc/">kRPC</a>.</p>
+                <p>kRPC is software that lets us interact directly with KSP. This means we can set values and trigger events through code.</p>
+                <p>Through some very professional wiring...</p>
+                <div class="image">
+                    <img style="width: 800px;" src="/project-assets/kerbal-controller/from-the-side.jpg" alt="My Kerbal Space Program controller.">
+                    <p>Very professional wiring</p>
+                </div>
+                <p>... we were able to get everything working!</p>
+            </div>
+
+            <script src="/js-files/footer.js"></script>
+        </div>
+    </div>
+</div>
+</body>
+</html>
