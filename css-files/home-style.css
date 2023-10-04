@@ -16,6 +16,13 @@
     --border-radius: 10px;
     --outer-card-padding: 10px;
 
+    --width-for-adapt: calc(
+            (var(--project-width) + var(--outer-card-padding) * 2) * var(--project-collumns) +
+            var(--projects-side-spacing) * (var(--project-collumns) - 1)
+    );
+
+    --mobile-project-width: calc(100% / 2 - (var(--projects-side-spacing) - var(--outer-card-padding)) * 2);
+
     --light-background-color: #fff;
     --light-background-image: none;
     --light-title-color: #000;
@@ -76,10 +83,19 @@ a, a:hover, a:focus, a:active {
 #center-column {
     --column-count: var(--project-collumns);
     display: grid;
-    grid-template-columns: repeat(var(--column-count), calc(var(--project-width) + var(--outer-card-padding) * 2));
+/*min(var(--column-count), auto-fill)*/
+    grid-template-columns: repeat(auto-fill, calc(var(--project-width) + var(--outer-card-padding) * 2));
     gap: var(--projects-bottom-spacing) var(--projects-side-spacing);
     margin-bottom: 1.5in;
+    width: var(--width-for-adapt);
+    max-width: 100%;
+
+    justify-content: center;
 }
+
+/**/
+
+/*, (pointer:fine)*/
 
 @media (pointer:none), (pointer:coarse) {
     /*body {*/
@@ -89,7 +105,12 @@ a, a:hover, a:focus, a:active {
 
     #center-column {
         --column-count: 2;
-        grid-template-columns: repeat(var(--column-count), calc(var(--project-width) + var(--outer-card-padding) * 2));
+        grid-template-columns: repeat(var(--column-count), var(--mobile-project-width));
+    }
+
+    .project {
+        grid-column-start: 1;
+        grid-column-end: -1;
     }
 
     /*.project_image_container {*/
@@ -143,6 +164,9 @@ header h1 a.comment-style-link {
 
 #website-title {
     position: absolute;
+    /*min-width: var(--width-for-adapt);*/
+    /*width: var(--width-for-adapt);*/
+    /*max-width: var(--width-for-adapt);*/
 }
 
 header .external-links {
@@ -179,6 +203,7 @@ header .external-links {
 }
 
 .project {
+    width: 100%;
     border-radius: calc(var(--border-radius) + var(--outer-card-padding) / 2);
     padding: var(--outer-card-padding);
 }
@@ -214,8 +239,8 @@ header .external-links {
 }
 
 .project_image_container {
-    width: var(--project-width);
-    height: var(--project-width);
+    width: 100%;
+    aspect-ratio: 1 / 1;
     position: relative;
 
     border-radius: var(--border-radius);
