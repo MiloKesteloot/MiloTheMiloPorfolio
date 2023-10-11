@@ -34,3 +34,13 @@
 .icon.flipX {
     transform: scaleX(-1);
 }
+
+@media (pointer:none), (pointer:coarse) {
+    .external-links .icon {
+        font-size: 80px;
+    }
+
+    .external-links .icon-container {
+        margin: auto 20px 0;
+    }
+}

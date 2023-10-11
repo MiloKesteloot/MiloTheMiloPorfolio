@@ -355,6 +355,10 @@ header .external-links {
 
 @media (pointer:none), (pointer:coarse) {
 
+    .mobile {
+        display: none;
+    }
+
     .project_text > a > h1 {
         font-size: 30px;
     }

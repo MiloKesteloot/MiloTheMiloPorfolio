@@ -160,3 +160,35 @@
 code {
     background-color: gray;
 }
+
+@media (pointer:none), (pointer:coarse) {
+
+    .text-column .maintitle-text {
+        font-size: 5em;
+        margin: 0;
+    }
+
+    .text-column .subtitle-text {
+        font-size: 2em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .text-column h3 {
+        font-size: 2.3em;
+        margin: 30px 0 10px -20px;
+    }
+
+    .text-column p, .text-column li {
+        font-size: 2rem;
+        line-height: 40px;
+    }
+
+    .images-holder {
+        flex-direction: column;
+    }
+    .images-holder img:not(:first-child) {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
