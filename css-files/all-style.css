@@ -3,6 +3,7 @@
 body {
     background-image: url(../assets/noisebg.png);
     background-repeat: repeat;
+    background-color: #282828;
 }
 
 h1 {

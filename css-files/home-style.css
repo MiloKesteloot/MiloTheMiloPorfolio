@@ -97,27 +97,7 @@ a, a:hover, a:focus, a:active {
 
 /*, (pointer:fine)*/
 
-@media (pointer:none), (pointer:coarse) {
-    /*body {*/
-    /*    background-color: red;*/
-    /*    background-image: none;*/
-    /*}*/
 
-    #center-column {
-        --column-count: 2;
-        grid-template-columns: repeat(var(--column-count), var(--mobile-project-width));
-    }
-
-    .project {
-        grid-column-start: 1;
-        grid-column-end: -1;
-    }
-
-    /*.project_image_container {*/
-    /*    width: 100%;*/
-    /*    aspect-ratio: 1;*/
-    /*}*/
-}
 
 /*@media (max-width: ) {*/
 /*    #center-column {*/
@@ -243,7 +223,8 @@ header .external-links {
     aspect-ratio: 1 / 1;
     position: relative;
 
-    border-radius: var(--border-radius);
+    /*overflow: hidden;*/
+
 }
 
 .project_image {
@@ -255,7 +236,7 @@ header .external-links {
     will-change: transform;
 
     border-radius: var(--border-radius);
-    overflow: hidden;
+
 
     transform-style: preserve-3d;
     transition: mask .5s ease-in-out,transform 0.1s ease;
@@ -371,3 +352,52 @@ header .external-links {
 /*.gray > h5::first-letter {*/
 /*     text-transform: capitalize;*/
 /* }*/
+
+@media (pointer:none), (pointer:coarse) {
+
+    .project_text > a > h1 {
+        font-size: 30px;
+    }
+
+    .project_text > p {
+        font-size: 23px;
+    }
+
+    .tags {
+        margin-top: 9px;
+    }
+
+    .tag > h5 {
+        font-size: 23px;
+    }
+
+    .tag {
+        margin-right: 12px;
+    }
+
+    .text-tag {
+        border-radius: 8px;
+        padding: 2px 5px;
+    }
+
+    .image-tag > img {
+        height: 30px;
+        width: 30px;
+    }
+
+    #center-column {
+        --column-count: 2;
+        grid-template-columns: repeat(var(--column-count), var(--mobile-project-width));
+    }
+
+    /*!*.project {*!*/
+    /*!*    grid-column-start: 1;*!*/
+    /*!*    grid-column-end: -1;*!*/
+    /*!*}*!*/
+
+    .project_image_container {
+        border-radius: calc(var(--border-radius) * 3);
+    }
+
+
+}
