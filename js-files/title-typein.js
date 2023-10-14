@@ -50,8 +50,6 @@ function terminalBlink() {
     const currentDate = new Date();
     const timestamp = currentDate.getTime();
 
-    console.log(timestamp)
-
     let maybeUnderscore = "_";
 
     const blinker = 1000;

@@ -131,12 +131,12 @@ header {
     margin-left: 42px;
     margin-top: -3px;
     caret-color: transparent;
+    width: 100%;
 }
 
 #terminal, #terminal-dummy {
     font-family: ubuntuMonoBold, monospace;
     font-size: 60px;
-    width: 100%;
     background-color: transparent;
     display: inline-block;
     border: none;
