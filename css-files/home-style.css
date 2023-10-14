@@ -8,6 +8,11 @@
     src: url(../assets/fonts/Ubuntu_Mono/UbuntuMono-Italic.ttf);
 }
 
+@font-face {
+    font-family: ubuntuMonoBold;
+    src: url(../assets/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf);
+}
+
 :root {
     --project-collumns: 4;
     --projects-side-spacing: 40px;
@@ -107,13 +112,53 @@ a, a:hover, a:focus, a:active {
 
 header {
     color: white;
-    font-family: ubuntuMonoRegular, monospace;
+    font-family: ubuntuMonoBold, monospace;
     margin-top: 40px;
     grid-column-start: 1;
     grid-column-end: -1;
     padding-inline: var(--outer-card-padding);
 
     margin-bottom: -25px;
+}
+
+#terminal:focus {
+    outline: none;
+}
+
+#terminal {
+    color: white;
+    background-color: rgba(0, 89, 255, 0.59);
+    margin-left: 42px;
+    margin-top: -3px;
+    caret-color: transparent;
+}
+
+#terminal, #terminal-dummy {
+    font-family: ubuntuMonoBold, monospace;
+    font-size: 60px;
+    width: 100%;
+    background-color: transparent;
+    display: inline-block;
+    border: none;
+    padding: 0;
+}
+
+#terminal-dummy {
+    margin-top: 2px;
+    margin-left: 1px;
+    position: absolute;
+    height: 67px;
+    color: white;
+    z-index: -2;
+}
+
+.trans {
+    color: transparent;
+    font-style: unset;
+}
+
+.terminal-frame {
+    display: flex;
 }
 
 header h1 {
@@ -135,7 +180,7 @@ header h1 a.comment-style-link {
     text-decoration-thickness: 5px;
 }
 
-#spacer-website-title {
+#spacer-website-title, #spacer-website-title-extra {
     /*color: transparent;*/
     color: rgba(255, 255, 255, 0.07);
     margin-left: -42px;

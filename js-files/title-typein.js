@@ -1,4 +1,8 @@
 const websiteTitle = document.getElementById("website-title");
+const terminalHTML = document.getElementById("terminal");
+const terminalDummyHTML = document.getElementById("terminal-dummy");
+
+// terminalDummyHTML.style.width = terminalHTML.style.width;
 
 let fullString = websiteTitle.innerHTML;
 
@@ -34,9 +38,33 @@ function rec() {
 
     printnl(finalPrint);
 
-    if (fullString.length > 0) {
+    terminalBlink();
+
+    // if (fullString.length > 0) {
         setTimeout(rec, 30 + Math.floor(Math.random() * 20));
+    // }
+}
+
+function terminalBlink() {
+
+    const currentDate = new Date();
+    const timestamp = currentDate.getTime();
+
+    console.log(timestamp)
+
+    let maybeUnderscore = "_";
+
+    const blinker = 1000;
+
+    if (timestamp % blinker < blinker/2) {
+        maybeUnderscore = "";
     }
+
+    let innerText = terminalHTML.value;
+
+    innerText = innerText.substring(0, terminalHTML.selectionStart);
+
+    terminalDummyHTML.innerHTML = '<i class="trans">' + innerText + "</i>" + maybeUnderscore;
 }
 
 function sub(n) {
