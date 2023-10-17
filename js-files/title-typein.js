@@ -1,6 +1,10 @@
 const websiteTitle = document.getElementById("website-title");
+const spacerWebsiteTitle = document.getElementById("spacer-website-title");
+const spacerWebsiteTitleExtra = document.getElementById("spacer-website-title-extra");
 const terminalHTML = document.getElementById("terminal");
 const terminalDummyHTML = document.getElementById("terminal-dummy");
+
+let lineCount = 6;
 
 // terminalDummyHTML.style.width = terminalHTML.style.width;
 
@@ -38,11 +42,51 @@ function rec() {
 
     printnl(finalPrint);
 
-    terminalBlink();
-
-    // if (fullString.length > 0) {
+    if (fullString.length > 0) {
         setTimeout(rec, 30 + Math.floor(Math.random() * 20));
-    // }
+        console.log("still doin it");
+    } else {
+        setTimeout(newRecFunction, 30 + Math.floor(Math.random() * 20));
+        console.log("other!");
+    }
+}
+
+function newRecFunction() {
+    terminalBlink();
+    setTimeout(newRecFunction, 1);
+}
+
+document.onkeydown = function (e) {
+    e = e || window.event;
+    let key = e.key;
+    if (key !== "Enter") {
+        return;
+    }
+
+    const message = terminalHTML.value;
+    const formattedMessage = message.replaceAll(" ", "").toLowerCase();
+
+    if (formattedMessage.startsWith("//")) {
+        addToConsole(message);
+    } else if (formattedMessage === "darkmode true") {
+        addToConsole("Darkmode is set to true.")
+    } else if (formattedMessage === "help") {
+
+    } else {
+        addToConsole("Unknown command.");
+        addToConsole("Type \"help\" for more options.");
+    }
+
+    // addToConsole(message);
+
+    terminalHTML.value = "";
+};
+
+function addToConsole(line) {
+    lineCount += 1;
+    spacerWebsiteTitle.innerHTML += "<br>" + lineCount;
+    spacerWebsiteTitleExtra.innerText = lineCount + 1;
+    websiteTitle.innerHTML += " " + line.replaceAll(" ", "&nbsp;");
 }
 
 function terminalBlink() {

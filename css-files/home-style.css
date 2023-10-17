@@ -48,6 +48,8 @@
     --subtitle-color: var(--dark-subtitle-color);
     --tag-gray-background-color: var(--dark-tag-gray-background-color);
     --tag-gray-text-color: var(--dark-tag-gray-text-color);
+
+    --blur-value: 2px;
 }
 
 * {
@@ -128,8 +130,8 @@ header {
 #terminal {
     color: white;
     background-color: rgba(0, 89, 255, 0.59);
-    margin-left: 42px;
-    margin-top: -3px;
+    margin-left: 41px;
+    margin-top: -8px;
     caret-color: transparent;
     width: 100%;
 }
@@ -159,6 +161,7 @@ header {
 
 .terminal-frame {
     display: flex;
+    margin-top: -8px;
 }
 
 header h1 {
@@ -268,6 +271,11 @@ header .external-links {
     aspect-ratio: 1 / 1;
     position: relative;
 
+    display: flex;
+
+    /*align-items: center;*/
+    /*justify-content: center;*/
+
     /*overflow: hidden;*/
 
 }
@@ -278,24 +286,63 @@ header .external-links {
     width: 100%;
     height: 100%;
 
-    will-change: transform;
-
     border-radius: var(--border-radius);
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    transform-style: preserve-3d;
-    transition: mask .5s ease-in-out,transform 0.1s ease;
     /*mask:*/
     /*        linear-gradient(135deg, #000c 40%, #000, #000c 60%)*/
     /*        100% 100%/ !* initial position, bottom-right *!*/
     /*        240% 240%; !* width and height *!*/
 }
 
-.project_image:hover {
+.project_image_tilt:hover .blur {
+    animation: project-image-blur-in 0.5s forwards;
+}
+
+.project_image_tilt:not(:hover) .blur {
+    animation: project-image-blur-out 0.5s forwards;
+}
+
+.project_image_container:hover .export-icon {
+    animation: export-icon-fade-in 0.2s forwards;
+}
+
+.project_image_container:not(:hover) .export-icon {
+    animation: export-icon-fade-out 0.2s forwards;
+}
+
+.project_image_tilt {
+    width: 100%;
+    height: 100%;
+
+    border-radius: var(--border-radius);
+
+    overflow: hidden;
+
+    will-change: transform;
+    transform-style: preserve-3d;
+    transition: mask .5s ease-in-out,transform 0.1s ease;
+}
+
+.export-icon {
+    color: white;
+    font-size: calc(var(--project-width) / 1.6);
+    margin-top: calc(var(--project-width) / 5.8);
+    margin-left: calc(var(--project-width) / 5.6);
+    position: absolute;
+    z-index: 4;
+    pointer-events: none;
+}
+
+
+.project_image_tilt:hover {
     mask-position: 0 0; /* Move to the top-left on hover */
 }
 
-.project_image::before {
+.project_image_tilt::before {
     content: "";
     position: absolute;
     height: 100%;
@@ -306,10 +353,45 @@ header .external-links {
     bottom: 0;
 }
 
-.project_image {
-
+@keyframes project-image-blur-in {
+    0% {
+        filter: blur(0);
+        -webkit-filter: blur(0);
+    }
+    100% {
+        filter: blur(var(--blur-value));
+        -webkit-filter: blur(var(--blur-value));
+    }
 }
 
+@keyframes project-image-blur-out {
+    0% {
+        filter: blur(var(--blur-value));
+        -webkit-filter: blur(var(--blur-value));
+    }
+    100% {
+        filter: blur(0);
+        -webkit-filter: blur(0);
+    }
+}
+
+@keyframes export-icon-fade-in {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
+
+@keyframes export-icon-fade-out {
+    0% {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        color: transparent;
+    }
+}
 
 /*.cover-image {*/
 /*    width: 100%;*/

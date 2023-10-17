@@ -16,11 +16,11 @@ function handleHover(e, card) {
     rotateX = -rotateX;
     rotateY = -rotateY;
 
-    card.querySelector(".project_image").style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
+    card.querySelector(".project_image_tilt").style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 1)`;
 }
 
 function resetStyles(e, card) {
-    card.querySelector(".project_image").style.transform =
+    card.querySelector(".project_image_tilt").style.transform =
         `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg) rotateY(0deg)`;
 }
 
