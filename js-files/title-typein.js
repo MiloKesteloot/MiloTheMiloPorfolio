@@ -74,13 +74,15 @@ document.onkeydown = function (e) {
     } else if (formattedMessage === "themelight") {
         addToConsole("Theme set to light.");
         document.body.classList.add("light-mode");
+    } else if (formattedMessage === "theme") {
+        addToConsole("Themes: light, dark.");
     } else if (formattedMessage === "help") {
         addToConsole("Terminal commands:");
-        addToConsole("`theme (light/dark)`");
-        addToConsole("`help`");
+        addToConsole("theme (light/dark)");
+        addToConsole("help");
     } else {
         addToConsole("Unknown command.");
-        addToConsole("Type `help` for more options.");
+        addToConsole("Type help for more options.");
     }
 
     // addToConsole(message);
