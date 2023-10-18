@@ -68,13 +68,19 @@ document.onkeydown = function (e) {
 
     if (formattedMessage.startsWith("//")) {
         addToConsole(message);
-    } else if (formattedMessage === "darkmode true") {
-        addToConsole("Darkmode is set to true.")
+    } else if (formattedMessage === "themedark") {
+        addToConsole("Theme set to dark.");
+        document.body.classList.remove("light-mode");
+    } else if (formattedMessage === "themelight") {
+        addToConsole("Theme set to light.");
+        document.body.classList.add("light-mode");
     } else if (formattedMessage === "help") {
-
+        addToConsole("Terminal commands:");
+        addToConsole("`theme (light/dark)`");
+        addToConsole("`help`");
     } else {
         addToConsole("Unknown command.");
-        addToConsole("Type \"help\" for more options.");
+        addToConsole("Type `help` for more options.");
     }
 
     // addToConsole(message);
