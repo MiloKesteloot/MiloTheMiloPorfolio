@@ -19,7 +19,7 @@ let finalPrint = "";
 let inA = false;
 
 function everyFrame() {
-    terminalHTML.focus();
+    terminalHTML.focus({ preventScroll: true });
     setTimeout(everyFrame, 1);
 }
 
