@@ -1,8 +1,22 @@
-const websiteTitle = document.getElementById("website-title");
-const spacerWebsiteTitle = document.getElementById("spacer-website-title");
-const spacerWebsiteTitleExtra = document.getElementById("spacer-website-title-extra");
-const terminalHTML = document.getElementById("terminal");
-const terminalDummyHTML = document.getElementById("terminal-dummy");
+let websiteTitle;
+let spacerWebsiteTitle;
+let spacerWebsiteTitleExtra;
+let terminalHTML;
+let terminalDummyHTML;
+
+document.addEventListener('DOMContentLoaded', function() {
+    websiteTitle = document.getElementById("website-title");
+    spacerWebsiteTitle = document.getElementById("spacer-website-title");
+    spacerWebsiteTitleExtra = document.getElementById("spacer-website-title-extra");
+    terminalHTML = document.getElementById("terminal");
+    terminalDummyHTML = document.getElementById("terminal-dummy");
+    fullString = websiteTitle.innerHTML;
+    websiteTitle.innerText = "_";
+
+    everyFrame();
+    rec();
+    setUpTags();
+});
 
 const projectHTMLs = [];
 
@@ -10,9 +24,7 @@ let lineCount = 6;
 
 // terminalDummyHTML.style.width = terminalHTML.style.width;
 
-let fullString = websiteTitle.innerHTML;
-
-websiteTitle.innerText = "_";
+let fullString;
 
 let finalPrint = "";
 
@@ -22,8 +34,6 @@ function everyFrame() {
     terminalHTML.focus({ preventScroll: true });
     setTimeout(everyFrame, 1);
 }
-
-everyFrame();
 
 function rec() {
 
@@ -162,8 +172,6 @@ function printnl(string) {
     // div.elt.innerText = div.elt.innerText + string + add + `\n`;
 }
 
-rec();
-
 // const websiteTitle = document.getElementById("website-title");
 //
 // let websiteTitleTimer = 0;
@@ -219,35 +227,38 @@ rec();
 //     }
 // }
 
-const projects = document.getElementsByClassName("project");
+let projects;
 
 const tagTemplate = `<div class="tag text-tag gray"><h5>REPLACE</h5></div>`;
-
 const pico8TagTemplate = `<div class="tag image-tag"><img src="../assets/pico8logo.png" alt="PICO-8"></div>`
+function setUpTags() {
 
-for (let i = 0; i < projects.length; i++) {
+    projects = document.getElementsByClassName("project");
 
-    const project = projects[i];
+    for (let i = 0; i < projects.length; i++) {
 
-    const projectHTML = {HTML:project, tags:[]};
+        const project = projects[i];
 
-    const tagsElement = getTagsElement(project);
+        const projectHTML = {HTML:project, tags:[]};
 
-    const tagsList = tagsElement.innerHTML.split(", ");
+        const tagsElement = getTagsElement(project);
 
-    tagsElement.innerHTML = "";
+        const tagsList = tagsElement.innerHTML.split(", ");
 
-    for (let j = 0; j < tagsList.length; j++) {
-        const tag = tagsList[j];
-        projectHTML.tags.push(tag);
-        if (tag === "Pico8") {
-            tagsElement.innerHTML += pico8TagTemplate;
-        } else {
-            tagsElement.innerHTML += tagTemplate.replace("REPLACE", tag);
+        tagsElement.innerHTML = "";
+
+        for (let j = 0; j < tagsList.length; j++) {
+            const tag = tagsList[j];
+            projectHTML.tags.push(tag);
+            if (tag === "Pico8") {
+                tagsElement.innerHTML += pico8TagTemplate;
+            } else {
+                tagsElement.innerHTML += tagTemplate.replace("REPLACE", tag);
+            }
         }
-    }
 
-    projectHTMLs.push(projectHTML);
+        projectHTMLs.push(projectHTML);
+    }
 }
 
 function getTagsElement(project) {
