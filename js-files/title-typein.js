@@ -4,6 +4,8 @@ const spacerWebsiteTitleExtra = document.getElementById("spacer-website-title-ex
 const terminalHTML = document.getElementById("terminal");
 const terminalDummyHTML = document.getElementById("terminal-dummy");
 
+const projectHTMLs = [];
+
 let lineCount = 6;
 
 // terminalDummyHTML.style.width = terminalHTML.style.width;
@@ -15,6 +17,13 @@ websiteTitle.innerText = "_";
 let finalPrint = "";
 
 let inA = false;
+
+function everyFrame() {
+    terminalHTML.focus();
+    setTimeout(everyFrame, 1);
+}
+
+everyFrame();
 
 function rec() {
 
@@ -44,10 +53,10 @@ function rec() {
 
     if (fullString.length > 0) {
         setTimeout(rec, 30 + Math.floor(Math.random() * 20));
-        console.log("still doin it");
+        // console.log("still doin it");
     } else {
         setTimeout(newRecFunction, 30 + Math.floor(Math.random() * 20));
-        console.log("other!");
+        // console.log("other!");
     }
 }
 
@@ -63,11 +72,14 @@ document.onkeydown = function (e) {
         return;
     }
 
-    const message = terminalHTML.value;
+    let message = terminalHTML.value;
+
+
+
     const formattedMessage = message.replaceAll(" ", "").toLowerCase();
 
     if (formattedMessage.startsWith("//")) {
-        addToConsole(message);
+        addToConsole(message, '<a class="comment-style">', '</a>');
     } else if (formattedMessage === "themedark") {
         addToConsole("Theme set to dark.");
         document.body.classList.remove("light-mode");
@@ -80,6 +92,9 @@ document.onkeydown = function (e) {
         addToConsole("Terminal commands:");
         addToConsole("theme (light/dark)");
         addToConsole("help");
+    } else if (message.startsWith("tag ")) {
+        const tag = message.substring(4,message.length);
+        addToConsole(tag);
     } else {
         addToConsole("Unknown command.");
         addToConsole("Type help for more options.");
@@ -90,11 +105,24 @@ document.onkeydown = function (e) {
     terminalHTML.value = "";
 };
 
-function addToConsole(line) {
+function removeSpacesAround(message) {
+    while (message.startsWith(" ")) {
+        message = message.substring(1, message.length);
+    }
+
+    while (message.endsWith(" ")) {
+        message = message.substring(0, message.length - 1);
+    }
+}
+
+function addToConsole(line, front, back) {
+    front = front ?? "";
+    back = back ?? "";
     lineCount += 1;
     spacerWebsiteTitle.innerHTML += "<br>" + lineCount;
     spacerWebsiteTitleExtra.innerText = lineCount + 1;
-    websiteTitle.innerHTML += " " + line.replaceAll(" ", "&nbsp;");
+    websiteTitle.innerHTML += " " + front + line.replaceAll(" ", "&nbsp;") + back;
+    console.log(line);
 }
 
 function terminalBlink() {
@@ -190,3 +218,55 @@ rec();
 //         }
 //     }
 // }
+
+const projects = document.getElementsByClassName("project");
+
+const tagTemplate = `<div class="tag text-tag gray"><h5>REPLACE</h5></div>`;
+
+const pico8TagTemplate = `<div class="tag image-tag"><img src="../assets/pico8logo.png" alt="PICO-8"></div>`
+
+for (let i = 0; i < projects.length; i++) {
+
+    const project = projects[i];
+
+    const projectHTML = {HTML:project, tags:[]};
+
+    const tagsElement = getTagsElement(project);
+
+    const tagsList = tagsElement.innerHTML.split(", ");
+
+    tagsElement.innerHTML = "";
+
+    for (let j = 0; j < tagsList.length; j++) {
+        const tag = tagsList[j];
+        projectHTML.tags.push(tag);
+        if (tag === "Pico8") {
+            tagsElement.innerHTML += pico8TagTemplate;
+        } else {
+            tagsElement.innerHTML += tagTemplate.replace("REPLACE", tag);
+        }
+    }
+
+    projectHTMLs.push(projectHTML);
+}
+
+function getTagsElement(project) {
+
+    if (project === null) {
+        return null;
+    }
+
+    const projectTextElement = project.querySelector(".project_text");
+
+    if (projectTextElement === null) {
+        return null;
+    }
+
+    const tagsElement = projectTextElement.querySelector(".tags");
+
+    if (tagsElement === null) {
+        return null;
+    }
+
+    return tagsElement;
+}
