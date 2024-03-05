@@ -37,6 +37,11 @@
     --light-subtitle-color: #777;
     --light-tag-gray-background-color: #d8d8d8;
     --light-tag-gray-text-color: #222;
+    --light-header-color: #3e3e3e;
+    --light-terminal-color: black;
+    --light-header-h1-comment-color: rgba(0, 0, 0, 0.3);
+    --light-divider-background-color: rgba(0, 0, 0, 0.07);
+    --light-spacer-website-title-color: rgba(0, 0, 0, 0.1);
 
     --dark-background-color: #fff;
     --dark-background-image: url("../assets/noisebg.png");
@@ -44,6 +49,12 @@
     --dark-subtitle-color: #bbb;
     --dark-tag-gray-background-color: #d8d8d8;
     --dark-tag-gray-text-color: #222;
+    --dark-header-color: #fff;
+    --dark-termainal-color: white;
+    --dark-header-h1-comment-color: rgba(255, 255, 255, 0.18);
+    --dark-divider-background-color: rgba(255, 255, 255, 0.07);
+    --dark-spacer-website-title-color: rgba(255, 255, 255, 0.07);
+
 
     --background-color: var(--dark-background-color);
     --background-image: var(--dark-background-image);
@@ -139,8 +150,12 @@ a, a:hover, a:focus, a:active {
 /*    }*/
 /*}*/
 
+body.light-mode header {
+    color: var(--light-header-color);
+}
+
 header {
-    color: white;
+    color: var(--dark-header-color);
     font-family: ubuntuMonoBold, monospace;
     margin-top: 40px;
     grid-column-start: 1;
@@ -154,8 +169,13 @@ header {
     outline: none;
 }
 
+body.light-mode #terminal {
+    color: var(--light-terminal-color);
+}
+
+
 #terminal {
-    color: white;
+    color: var(--dark-termainal-color);
     background-color: rgba(0, 89, 255, 0.59);
     margin-left: 17px;
     margin-top: -8px;
@@ -172,12 +192,16 @@ header {
     padding: 0;
 }
 
+body.light-mode #terminal-dummy {
+    color: var(--light-terminal-color);
+}
+
 #terminal-dummy {
     margin-top: 2px;
     margin-left: 1px;
     position: absolute;
     height: 67px;
-    color: white;
+    color: var(--dark-termainal-color);
     z-index: -2;
 }
 
@@ -200,10 +224,14 @@ header h1 {
     margin-bottom: 8px;
 }
 
+body.light-mode header h1 a.comment-style {
+    color: var(--light-header-h1-comment-color);
+}
+
 header h1 a.comment-style {
     font-size: 58px;
     font-family: ubuntuMonoItalic, monospace;
-    color: rgba(255, 255, 255, 0.18);
+    color: var(--dark-header-h1-comment-color);
     /*color: #2f7abd;*/
     /*color: rgba(7, 255, 0, 0.63);*/
 }
@@ -213,9 +241,15 @@ header h1 a.comment-style-link {
     text-decoration-thickness: 5px;
 }
 
+
+
+body.light-mode #spacer-website-title, body.light-mode #spacer-website-title-extra {
+    color: var(--light-spacer-website-title-color);
+}
+
 #spacer-website-title, #spacer-website-title-extra {
     /*color: transparent;*/
-    color: rgba(255, 255, 255, 0.07);
+    color: var(--dark-spacer-website-title-color);
     margin-left: -10.5ch;
     width: 10ch;
     text-align: right;
@@ -247,6 +281,10 @@ header .external-links {
     font-size: 30px;
 }
 
+body.light-mode .divider {
+    background-color: var(--light-divider-background-color);
+}
+
 .divider {
 
     --stick-out: 20px;
@@ -257,7 +295,7 @@ header .external-links {
     margin-left: calc(-1 * var(--stick-out));
 
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: var(--dark-divider-background-color);
     /*margin-top: 20px;*/
     /*margin-bottom: 20px;*/
 }
