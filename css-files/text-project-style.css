@@ -161,6 +161,50 @@ code {
     background-color: gray;
 }
 
+.pdf {
+    width: 100%;
+    /*background-color: red;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pdf > iframe {
+    margin-top: 10px;
+}
+
+.pdf .pdf-options {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.pdf .pdf-options button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    border-radius: 1000px;
+    display: block;
+    margin-right: 10px;
+}
+
+.pdf .pdf-options button:hover {
+    background-color: rgb(77, 77, 77);
+}
+
+.pdf .pdf-options button i {
+    color: gray;
+    font-size: 25px;
+    width: 100px;
+    height: 100px;
+}
+
+
+.pdf .pdf-options button:last-child {
+    margin-right: 40px;
+}
+
 @media (pointer:none), (pointer:coarse) {
 
     .text-column .maintitle-text {
