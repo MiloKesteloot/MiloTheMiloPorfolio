@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Check if the URL contains "milofanclub" and ends with ".html"
-    if (isDomainHTML(["github", "milofanclub", "milo.games"])) {
+    if (isDomainHTML(["github", "milofanclub", "milo"])) {
         // Remove ".html" from the URL
         const newUrl = window.location.href.replace('.html', '');
         // Redirect to the new URL
