@@ -21,7 +21,7 @@
     padding: 50px;
 }
 
-.text-column a:not(.icon-container), .text-column .rainbow {
+.text-column a:not(.icon-container):not(.no-style), .text-column .rainbow {
     /*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
     background: linear-gradient(
             to right,
@@ -186,19 +186,31 @@ code {
     border: none;
     border-radius: 1000px;
     display: block;
-    margin-right: 10px;
+
 }
 
 .pdf .pdf-options button:hover {
     background-color: rgb(77, 77, 77);
+    cursor: pointer;
+
+}
+
+.pdf .pdf-options a {
+    width: 50px;
+    height: 50px;
+    border-radius: 1000px;
+    margin-right: 10px;
 }
 
 .pdf .pdf-options button i {
-    color: gray;
+    color: rgb(128, 128, 128);
     font-size: 25px;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+    padding-top: 10px; /* TODO I'm doing this so that the icons are centered. This is terrible, do it right. Hi future Milo :) */
 }
+
+.pdf .pdf-options button i {
 
 
 .pdf .pdf-options button:last-child {

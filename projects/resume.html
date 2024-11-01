@@ -30,8 +30,11 @@
                     <div class="pdf-options">
 <!--                        <a href="/project-assets/resume/MiloKestelootResume.pdf" class="button"><i class="fa-solid fa-download"></i></a>-->
 
-                        <button class="button"><i class="fa-solid fa-print"></i></button>
-                        <button class="button"><i class="fa-solid fa-print"></i></button>
+                        <a class="no-style" href="../project-assets/resume/MiloKestelootResume.pdf" download="MiloKestelootResume.pdf">
+                        <button class="button"><i class="fa-solid fa-download"></i></button>
+                        </a>
+                        <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+                        <button class="button" onclick="printJS('../project-assets/resume/MiloKestelootResume.pdf', 'pdf')"><i class="fa-solid fa-print" style="padding-top: 13px;"><!-- TODO fix this padding spacing hack. --></i></button>
                     </div>
                     <iframe src="/project-assets/resume/MiloKestelootResume.html" style="border: none; width: 8.5in; min-height: 11in; overflow: hidden;"></iframe>
                 </div>
