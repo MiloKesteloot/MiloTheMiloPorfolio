@@ -1,0 +1,122 @@
+:root {
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.left {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 600px;
+
+    .ThreeDee {
+        display: flex;
+        transform: rotateY(20deg);
+
+        h1 {
+            font-family: Verdana;
+            font-size: 6em;
+        }
+    }
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    perspective: 800px;
+
+    .ThreeDee {
+
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        transform: rotateY(-20deg);
+
+
+
+        a {
+            width: 40vw;
+            height: 3vw;
+            outline: 2px black solid;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-family: Verdana;
+            font-size: 2em;
+        }
+    }
+}
+
+.card {
+    width: 500px;
+    background-color: #1A213B;
+    padding: 20px;
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: var(--border);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+
+        & > img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        & > div {
+            background-color: #010020;
+            font-family: jura, monospace;
+        }
+
+        & > .name {
+            color: deepskyblue;
+            font-weight: bolder;
+            width: 80%;
+            height: var(--name-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+
+            border: var(--border);
+            border-radius: var(--border-radius);
+
+            margin-top: calc(var(--name-height) / -2);
+            z-index: 2;
+        }
+
+        & > .spacer {
+            height: calc(var(--name-height) / 2);
+            width: 100%;
+            margin-top: calc(var(--name-height) / -2);
+            border-top: var(--border);
+        }
+
+        & > .description {
+            color: white;
+            font-family: jura, monospace;
+            font-weight: bolder;
+            width: 100%;
+            height: 100px;
+            font-size: 1rem;
+        }
+    }
+}
