@@ -1,0 +1,17 @@
+body {
+    height: 100vh;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+div {
+    background-color: #ececec;
+    padding: 5px;
+    border-radius: 10px;
+    border: gray solid 3px;
+    font-family: Arial;
+
+    position: absolute;
+    top: 100px;
+}
