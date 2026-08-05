@@ -565,6 +565,8 @@ body.light-mode .divider {
     color: white;
     margin-top: 20px;
     display: none;
+    font-size: 28px;
+    line-height: 1.4;
 }
 
 @media (pointer:none), (pointer:coarse) {
@@ -589,9 +591,9 @@ body.light-mode .divider {
         /*background-color: rgba(51, 51, 51, 0.23);*/
     }
 
-    .mobile {
-        display: none;
-    }
+    /*.mobile {*/
+    /*    display: none;*/
+    /*}*/
 
     .project_text > a > h1 {
         font-size: 30px;
