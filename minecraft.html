@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My MDog Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import MDog from "https://cdn.jsdelivr.net/gh/MiloKesteloot/MDogEngine@v1.0.0/MDogModules/MDogMain.js";
+
+        let x = MDog.Draw.getScreenWidthInArtPixels() / 2;
+        let y = MDog.Draw.getScreenHeightInArtPixels() / 2;
+        const speed = 0.5; // the engine runs 160 ticks per second
+
+        function update() {
+            const k = MDog.Input.Keyboard;
+            if (k.isDown("ArrowLeft")  || k.isDown("a")) x -= speed;
+            if (k.isDown("ArrowRight") || k.isDown("d")) x += speed;
+            if (k.isDown("ArrowUp")    || k.isDown("w")) y -= speed;
+            if (k.isDown("ArrowDown")  || k.isDown("s")) y += speed;
+
+            MDog.Draw.clear({color: "#222"});
+            MDog.Draw.circle(Math.round(x), Math.round(y), 8, "orange");
+        }
+
+        MDog.setActiveFunction(update);
+    </script>
+</body>
+</html>
