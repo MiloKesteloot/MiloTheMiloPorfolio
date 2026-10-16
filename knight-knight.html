@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knight Knight</title>
+    <script src="/js-files/url-fixer.js"></script>
+    <link rel="icon" type="image/png" href="/assets/icon.png">
+</head>
+<body style="margin: 0; padding: 0;">
+    <iframe id="game" style="width: 100%; height: 100vh; max-height: 100vh; display: block; border: none; margin: 0;" allow="clipboard-write; autoplay; fullscreen"></iframe>
+    <script>
+        // An invite link (milo.games/knight-knight?code=ABCD) passes its code on to the game, which joins that match.
+        // The code's then taken out of this page's address, so reloading later doesn't try to join an old match.
+        const game = "https://milokesteloot.github.io/MDogEngine/?game=knight-knight-online&fullscreen=true";
+        const code = new URLSearchParams(location.search).get("code");
+        const frame = document.getElementById("game");
+        frame.src = code ? game + "&code=" + encodeURIComponent(code) : game;
+        if (code) {
+            history.replaceState(null, "", location.pathname.replace(".html", ""));
+        }
+        frame.addEventListener("load", () => frame.focus());
+    </script>
+</body>
+</html>
