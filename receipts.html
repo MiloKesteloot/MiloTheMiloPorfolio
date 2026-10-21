@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Receipts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="/css-files/all-project-style.css">
+    <link rel="stylesheet" type="text/css" href="/css-files/receipts-style.css?v=3">
+    <script src="/js-files/url-fixer.js"></script>
+    <link rel="icon" type="image/png" href="/assets/icon.png">
+</head>
+<body>
+<!-- Placeholder writing throughout. Screenshots come from WhipOutTheReceipts: npm run screenshots -->
+<div class="receipts-page">
+    <nav class="receipts-nav">
+        <a href="/">← milo.games</a>
+    </nav>
+
+    <header class="receipts-header">
+        <h1>Receipts</h1>
+        <p>A web app my roommates and I use to split groceries, dinners and everything else we buy for each other. Whoever pays adds the receipt, everyone checks off what they had, and the app works out who owes who, down to the cent.</p>
+        <div class="receipts-links">
+            <a href="https://github.com/MiloKesteloot/WhipOutTheReceipts" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+                GitHub
+            </a>
+            <a href="https://milokesteloot.github.io/WhipOutTheReceipts/" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                Open the app
+            </a>
+        </div>
+    </header>
+
+    <div class="hero-stage">
+        <div class="browser">
+            <div class="browser-bar"><span></span><span></span><span></span></div>
+            <img src="/project-assets/receipts/desktop-calendar.png" width="2560" height="1600" alt="The Receipts page: a calendar of September with each day's receipts and totals">
+        </div>
+        <figure class="phone hero-phone">
+            <div class="phone-body">
+                <video src="/project-assets/receipts/phone-hero.mp4" poster="/project-assets/receipts/phone-hero-poster.png" width="780" height="1688" autoplay muted loop playsinline preload="auto" aria-label="Opening a Trader Joe's receipt and checking off items, with the running total updating"></video>
+            </div>
+        </figure>
+    </div>
+
+    <section class="feature">
+        <div class="feature-text">
+            <h2>Check off what you had</h2>
+            <p>Splitting a grocery run evenly never felt fair, since not everyone eats the same things. In Receipts, each person goes through the receipt and checks off the items they're sharing. Things like paper towels are marked to always split with everyone.</p>
+            <p>Once everyone has checked in, the app splits each item between the people who had it. Tax and tip are spread out in proportion to what each person bought, and leftover cents are handed out so the totals always add up exactly.</p>
+        </div>
+        <div class="phones">
+            <figure class="phone">
+                <div class="phone-body"><img src="/project-assets/receipts/phone-todo.png" width="1170" height="2532" alt="Home: a receipt to check off and a balance summary" loading="lazy"></div>
+                <figcaption>What needs doing</figcaption>
+            </figure>
+            <figure class="phone">
+                <div class="phone-body"><img src="/project-assets/receipts/phone-claim.png" width="1170" height="2532" alt="A Trader Joe's receipt with items to check off" loading="lazy"></div>
+                <figcaption>Claiming items</figcaption>
+            </figure>
+            <figure class="phone">
+                <div class="phone-body"><img src="/project-assets/receipts/phone-split.png" width="1170" height="2532" alt="Who owes what on a Costco receipt, with an itemized breakdown" loading="lazy"></div>
+                <figcaption>Who owes what</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="feature">
+        <div class="feature-text">
+            <h2>Adding receipts</h2>
+            <p>Receipts can be typed in by hand or scanned from a photo, which uses Gemini to read the store, items, prices, tax and tip. For restaurants, items can be grouped into meals so each person grabs their whole order at once.</p>
+            <p>Every receipt keeps a history of who added, changed or checked off what, so nothing gets changed without people knowing.</p>
+        </div>
+        <div class="phones">
+            <figure class="phone">
+                <div class="phone-body"><img src="/project-assets/receipts/phone-add.png" width="1170" height="2532" alt="Editing a Costco receipt" loading="lazy"></div>
+                <figcaption>Entering a receipt</figcaption>
+            </figure>
+            <figure class="phone">
+                <div class="phone-body"><img src="/project-assets/receipts/phone-dining.png" width="1170" height="2532" alt="A restaurant receipt grouped into one meal per person" loading="lazy"></div>
+                <figcaption>Meals at a restaurant</figcaption>
+            </figure>
+            <figure class="phone">
+                <div class="phone-body"><img src="/project-assets/receipts/phone-days.png" width="1170" height="2532" alt="Receipts listed by day, with who still needs to check in" loading="lazy"></div>
+                <figcaption>Waiting on someone</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="feature">
+        <div class="feature-text">
+            <h2>Stats</h2>
+            <p>Because every item is tracked, there's a lot to look at: spending per month, by category and by store, the most bought items, and how much each person has paid compared to what they've actually used.</p>
+        </div>
+        <div class="browser">
+            <div class="browser-bar"><span></span><span></span><span></span></div>
+            <img src="/project-assets/receipts/desktop-stats.png" width="2560" height="1600" alt="Stats page with spending per month and a fair share chart" loading="lazy">
+        </div>
+    </section>
+
+    <section class="feature">
+        <div class="feature-text">
+            <h2>Paying each other back</h2>
+            <p>The Balances page shows who owes who across every receipt. When someone pays a person back, they mark it as sent, and it shows up in both people's payment history. Debts between two people in opposite directions cancel out, so you only ever pay the difference. Search covers every item ever bought, which is handy for settling "wait, who bought the olive oil?"</p>
+        </div>
+        <div class="phones">
+            <figure class="phone">
+                <div class="phone-body"><img src="/project-assets/receipts/phone-payments.png" width="1170" height="2532" alt="Balances: who you owe, who owes you, and payment history" loading="lazy"></div>
+                <figcaption>Balances</figcaption>
+            </figure>
+            <figure class="phone">
+                <div class="phone-body"><img src="/project-assets/receipts/phone-stats.png" width="1170" height="2532" alt="Paid versus consumed for each person" loading="lazy"></div>
+                <figcaption>Paid vs. consumed</figcaption>
+            </figure>
+            <figure class="phone">
+                <div class="phone-body"><img src="/project-assets/receipts/phone-search.png" width="1170" height="2532" alt="Searching every item for chicken" loading="lazy"></div>
+                <figcaption>Search</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="feature">
+        <div class="feature-text stack-heading">
+            <h2>How it's built</h2>
+        </div>
+        <div class="stack">
+            <div class="stack-card" style="--brand: #61DAFB">
+                <div class="stack-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg></div>
+                <h3>React</h3>
+                <p>The whole front end, a single-page app with React Router.</p>
+            </div>
+            <div class="stack-card" style="--brand: #9135FF">
+                <div class="stack-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.056 23.238a.57.57 0 0 1-1.02-.355v-5.202c0-.63-.512-1.143-1.144-1.143H5.148a.57.57 0 0 1-.464-.903l3.777-5.29c.54-.753 0-1.804-.93-1.804H.57a.574.574 0 0 1-.543-.746.6.6 0 0 1 .08-.157L5.008.78a.57.57 0 0 1 .467-.24h14.589a.57.57 0 0 1 .466.903l-3.778 5.29c-.54.755 0 1.806.93 1.806h5.745c.238 0 .424.138.513.322a.56.56 0 0 1-.063.603z"/></svg></div>
+                <h3>Vite</h3>
+                <p>Builds the app, which is hosted on GitHub Pages.</p>
+            </div>
+            <div class="stack-card" style="--brand: #06B6D4">
+                <div class="stack-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg></div>
+                <h3>Tailwind CSS</h3>
+                <p>All of the styling, including the mobile layout.</p>
+            </div>
+            <div class="stack-card" style="--brand: #3FCF8E">
+                <div class="stack-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg></div>
+                <h3>Supabase</h3>
+                <p>Postgres database and Google and email sign-in.</p>
+            </div>
+            <div class="stack-card" style="--brand: #F5A524">
+                <div class="stack-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+                <h3>Recharts</h3>
+                <p>All of the charts on the stats page.</p>
+            </div>
+            <div class="stack-card" style="--brand: #8E75B2">
+                <div class="stack-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg></div>
+                <h3>Gemini</h3>
+                <p>Reads photos of receipts into items and prices.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>
